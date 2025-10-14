@@ -177,8 +177,8 @@ h2, h3 {
   }
    /* copyright */
    #copyright-message {
-  font-size: 0.30em;            /* 🔧 Uchepetsa size ya mawu */
-  font-weight: 400;             /* 🔧 Mawu asakhale a bold (400 = normal) */
+  font-size: 0.10em;            /* 🔧 Uchepetsa size ya mawu */
+  font-weight: 200;             /* 🔧 Mawu asakhale a bold (400 = normal) */
   font-style: italic;           /* 🔧 Mawu apange style ya italic (kapenanso onjezere ngati mukufuna) */
   color: #666;                  /* 🔧 Mtundu wa mawu — osakhala wakuda kwambiri */
   text-align: center;
