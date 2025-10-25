@@ -1,6 +1,6 @@
 // 🔥 Firebase Configuration
 const firebaseConfig = {
-   apiKey: "AIzaSyBBZxCwywnv_ZVXYezOV8IKG6iKWK5sL10",
+    apiKey: "AIzaSyBBZxCwywnv_ZVXYezOV8IKG6iKWK5sL10",
 
     authDomain: "studio-ywlo1.firebaseapp.com",
 
@@ -208,5 +208,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🟢 Default View
-  showlogin();
+  showLogin();
 });
