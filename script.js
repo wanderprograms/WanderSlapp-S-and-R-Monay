@@ -208,5 +208,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🟢 Default View
-  showRegister();
+  showlogin();
 });
