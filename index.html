@@ -5,70 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WANDERSLAPP S & R MONAY</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Firebase SDKs (compat version) -->
   <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-	 <!-- Logo Above Menu -->
+  <!-- Logo Above Menu -->
     <div class="logoAboveMenu">
       <img src="images/logo.png" alt="Logo"> <!-- Small logo above menu -->
                                        
-    </div>
-    
+    </div>  
+  
   <header>WANDERSLAPP S & R MONAY</header>
 
-   <p>  <h2>Musanayambe kugwiritsa ntchito.<a href="myupdate.html" target="_blank" class="social-link">👉    
-   <span>Dinani pano choyamba_</span></a>kuti muimvetse website ino </h2> 
+  <p>  <h2>Musanayambe kugwiritsa ntchito.<a href="myupdate.html" target="_blank" class="social-link">👉    
+    <span>Dinani pano choyamba_</span></a>kuti muimvetse website ino </h2> 
   </p>
 
   <main>
-    <!-- Register Section -->
-    <section id="registerSection">
-      <h2>Register</h2>
-      <form id="registerForm">
-        <label for="firstName">Zina Loyamba</label>
-        <input type="text" id="firstName" required />
-
-        <label for="lastName">Zina Lachiwili</label>
-        <input type="text" id="lastName" required />
-
-        <label for="emailRegister">Email</label>
-        <input type="email" id="emailRegister" required />
-
-        <label for="phoneRegister">Phone Number</label>
-        <input type="tel" id="phoneRegister" pattern="[0-9]{10,15}" required />
-
-        <label for="passwordRegister">Password</label>
-		<div class="password-wrapper">  
-        <input type="password" id="passwordRegister" minlength="6" required />
-		<span class="toggle-eye" onclick="document.getElementById('passwordRegister').type = document.getElementById('passwordRegister').type === 'password' ? 'text' : 'password'">👁️ show</span>
-      </div>	
-
-        <button type="submit">Register</button>
-        <p>Already registered? <button type="button" id="showLoginBtn">Login here</button></p>
-        <p id="registerError" class="error"></p>
+    <!-- Login Section -->
+    <section id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="identifierLogin">Email or Phone Number</label>
+        <input type="text" id="identifierLogin" required />
+        <label for="passwordLogin">Password</label>
+        <input type="password" id="passwordLogin" minlength="6" required />
+        <button type="submit">Login</button>
+        <p>New user? <button type="button" id="showRegisterBtn">Register here</button></p>
+        <p id="loginError" class="error"></p>
       </form>
     </section>
 
-    <!-- Login Section -->
-    <section id="loginSection" style="display:none;">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <label for="identifierLogin">Email kapena Phone Number</label>
-        <input type="text" id="identifierLogin" required />
-
-        <label for="passwordLogin">Password</label>
-		<div class="password-wrapper"> 
-        <input type="password" id="passwordLogin" minlength="6" required />
-		<span class="toggle-eye" onclick="document.getElementById('passwordLogin').type = document.getElementById('passwordLogin').type === 'password' ? 'text' : 'password'">👁️ show</span>
-      </div>	
-
-        <button type="submit">Lowani</button>
-        <p>New user? <button type="button" id="showRegisterBtn">Register here</button></p>
-        <p id="loginError" class="error"></p>
+    <!-- Register Section -->
+    <section id="registerSection" style="display:none;">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" required />
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" required />
+        <label for="emailRegister">Email</label>
+        <input type="email" id="emailRegister" required />
+        <label for="phoneRegister">Phone Number</label>
+        <input type="tel" id="phoneRegister" pattern="[0-9]{10,15}" required />
+        <label for="passwordRegister">Password</label>
+        <input type="password" id="passwordRegister" minlength="6" required />
+        <button type="submit">Register</button>
+        <p>Already registered? <button type="button" id="showLoginBtn">Login here</button></p>
+        <p id="registerError" class="error"></p>
       </form>
     </section>
 
@@ -78,42 +63,37 @@
         <div id="balance">Balance: MK 0.00</div>
         <div id="notificationIcon" data-count="0">🔔</div>
       </div>
-
       <div id="messages"></div>
-
       <section id="sendMoneySection">
         <h3>Send Money</h3>
         <form id="sendMoneyForm">
-          <label for="recipientPhone">Nambala ya munthu amene mukumutumizila</label>
+          <label for="recipientPhone">Recipient Phone Number</label>
           <input type="tel" id="recipientPhone" pattern="[0-9]{10,15}" required />
-
-          <label for="amount">Ndalama zomwe mukutumiza</label>
+          <label for="amount">Amount</label>
           <input type="number" id="amount" min="1" step="0.01" required />
-
           <label for="accountType">Account Type</label>
           <select id="accountType" required>
-            <option value="user">local User Account</option>
+            <option value="">-- Select --</option>
+            <option value="user">User Account</option>
             <option value="airtel">Airtel Money</option>
-            <option value="tnm">TNM Mpamba</option>           
+            <option value="tnm">TNM Mpamba</option>
           </select>
-
-          <button type="submit">Tumiza</button>
+          <button type="submit">Send</button>
           <p id="sendMoneyError" class="error"></p>
-          <p id="sendMoneySuccess" style="color: green;"></p>
+          <p id="sendMoneySuccess" style="color: green;"></p>         
         </form>
       </section>
-
       <button id="logoutBtn">Logout</button>
     </section>
   </main>
-  		<div id="copyright-message" class="copyright-box">
+      <div id="copyright-message" class="copyright-box">
  copyright &copy; 2025 WANDERSLAPP. Secure and reliable in all online operations.<br>       
        WANDERSLAPP. Trusted and protected across all internet services.   <strong>see our</strong><a href="myupdate.html" target="_blank" class="social-link">    
-    <span>privacy.</span></a>&<a href="myupdate.html" target="_blank" class="social-link">    
+    <span>privacy.</span></a>&<a href="index12.html" target="_blank" class="social-link">    
     <span>policy.</span></a>      
    </div>
-</div>
+</div>	
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
