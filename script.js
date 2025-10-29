@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lastName,
         email,
         phone,
-        balance: 10000,
+        balance: 500,
         notifications: []
       });
 
