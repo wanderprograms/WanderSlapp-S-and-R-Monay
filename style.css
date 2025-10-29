@@ -87,7 +87,7 @@ input:focus, select:focus {
 button {
   padding: 0.7rem;
   font-size: 1rem;
-  background: #BF00FF‎;
+  background: #E07B71‎;
   color: white;
   border: none;
   border-radius: 4px;
@@ -128,7 +128,7 @@ button:disabled {
 #balance {
   font-size: 1.2rem;
   font-weight: bold;
-  background: #E07B71;
+  background: #4682B4;
   color: white;
 }
 
