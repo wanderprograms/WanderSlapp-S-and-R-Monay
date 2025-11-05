@@ -10,7 +10,17 @@
   <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
+     <!-- Logo Above Menu -->
+    <div class="logoAboveMenu">
+      <img src="images/logo.png" alt="Logo"> <!-- Small logo above menu -->
+                                       
+    </div>   
+    
   <header>WANDERSLAPP S & R MONAY</header>
+
+   <p>  <h2>Musanayambe kugwiritsa ntchito werengani kaye ma_<a href="myupdate.html" target="_blank" class="social-link">👉    
+    <span>UPADATES_</span></a>kuti muimvetse website ino </h2> 
+  </p>
 
   <main>
     <!-- Login Section -->
@@ -57,6 +67,12 @@
     <section id="dashboard" style="display:none;">
       <div class="dashboard-header">
         <div id="balance">Balance: MK 0.00</div>
+        <button id="refreshDashboardBtn">
+      🔄 Refresh
+      <span id="refreshSpinner" style="display:none;">
+        <span class="spinner"></span>
+      </span>
+    </button>
         <div id="notificationIcon" data-count="0">🔔</div>
       </div>
       <div id="messages"></div>
@@ -82,11 +98,19 @@
       <button id="logoutBtn">Logout</button>
     </section>
   </main>
+     <div id="copyright-message" class="copyright-box">
+ copyright &copy; 2025 WANDERSLAPP. Secure and reliable in all online operations.<br>       
+       WANDERSLAPP. Trusted and protected across all internet services.   <strong>see our</strong><a href="myupdate.html" target="_blank" class="social-link">    
+    <span>privacy.</span></a>&<a href="myupdate.html" target="_blank" class="social-link">    
+    <span>policy.</span></a>      
+   </div>
+</div>	
 
   <script type="module" src="script.js"></script>
   <script src="enhancer.js"></script>
 </body>
 </html>
+
 
 
 
