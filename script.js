@@ -214,6 +214,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+   // USER DASHBOARD REFRESH SCRIPT
+
+// 1. Listener ya Refresh Button
+document.getElementById('refreshDashboardBtn').addEventListener('click', () => {
+  const spinner = document.getElementById('refreshSpinner');
+  spinner.style.display = 'inline-block';
+
+  setTimeout(() => {
+    spinner.style.display = 'none';
+    refreshUserDashboard(); // 🔁 Main function
+  }, 2000);
+});
+
+// 2. Main Refresh Function
+function refreshUserDashboard() {
+  // Chotsa zonse
+  document.querySelectorAll('input, textarea').forEach(e => e.value = '');
+  document.querySelectorAll('p').forEach(p => p.textContent = '');
+  document.querySelectorAll('.sectionBlock').forEach(div => div.style.display = 'none');
+
+  // Bwezeretsa default section
+  document.getElementById('sectionUsers').style.display = 'block';
+
+  // Bwezeretsa dashboard yatsopano
+  loadUserDashboard(); // 🔁 Iyi ikufunsa Firestore kuti ibweretse data yatsopano
+}
+
+// 3. Load fresh dashboard data
+function loadUserDashboard() {
+  const uid = localStorage.getItem('uid'); // ✅ Osatuluka, tikugwiritsa ntchito uid yomwe ilipo
+
+  firestore.collection("users").doc(uid).get().then(doc => {
+    if (!doc.exists) return;
+
+    const data = doc.data();
+
+    // Bwezeretsa UI
+    document.getElementById('userBalance').textContent = "Balance: MK " + data.balance;
+    document.getElementById('notificationCount').textContent = data.notifications.length;
+
+    // Load dashboard sections
+    loadUserTransactions(uid);
+    loadUserMessages(uid);
+    // Add more if needed
+  }).catch(error => {
+    console.error("Refresh failed:", error);
+    alert("Failed to refresh dashboard.");
+  });
+}
+
   document.getElementById('logoutBtn').addEventListener('click', async () => {
     await auth.signOut();
     currentUser = null;
